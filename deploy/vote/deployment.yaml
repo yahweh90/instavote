@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: redis
-  name: redis
+    app: vote
+  name: vote
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: redis
+      app: vote
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: redis
+        app: vote
     spec:
       containers:
-      - image: redis:alpine
-        name: redis
+      - image: schoolofdevops/vote:v1
+        name: vote
         resources: {}
 status: {}
